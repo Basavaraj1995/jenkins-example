@@ -19,7 +19,7 @@ pipeline {
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
-
+        
             post {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
@@ -29,5 +29,12 @@ pipeline {
                 }
             }
         }
+		  stage('s3 copy') {
+             steps {
+			 sh "aws s3 ls"
+			 sh "aws s3 cp file.txt s3://bucket-name"
+                
+            }
     }
+}
 }
