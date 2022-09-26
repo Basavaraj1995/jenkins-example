@@ -32,7 +32,7 @@ pipeline {
 		  stage('s3 copy') {
              steps {
 			 sh "aws s3 ls"
-			 sh "aws s3 cp file.txt s3://bucket-name"
+			 //sh "aws s3 cp file.txt s3://bucket-name"
                 
             }
     }
