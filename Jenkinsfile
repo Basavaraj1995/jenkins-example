@@ -36,6 +36,6 @@ pipeline {
 			 //sh "aws s3 cp file.txt s3://bucket-name"
                 
             }
+        }		  
     }
-}
 }
