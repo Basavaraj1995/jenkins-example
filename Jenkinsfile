@@ -1,5 +1,10 @@
 pipeline {
     agent any
+	environment {
+    AWS_ACCESS_KEY_ID = 'AKIA6AZWZ6EJZCQYXJWZ'
+    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_REGION = 'ap-south-1'
+}
 
     /*tools {
         // Install the Maven version configured as "M3" and add it to the path.
@@ -32,8 +37,16 @@ pipeline {
         }
 		  stage('s3 copy') {
              steps {
-			 sh "aws s3 ls"
+		     script {
+          withCredentials([usernamePassword(
+            passwordVariable: 'AWS_SECRET_ACCESS_KEY',
+            usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
+		          sh "aws s3 ls"
 			 //sh "aws s3 cp file.txt s3://bucket-name"
+            
+            }
+            }
+			 
                 
             }
         }		  
