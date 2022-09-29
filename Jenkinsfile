@@ -4,6 +4,8 @@ pipeline {
     AWS_ACCESS_KEY_ID = 'AKIA6AZWZ6EJZCQYXJWZ'
     AWS_SECRET_ACCESS_KEY = '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'
     AWS_REGION = 'ap-south-1'
+   
+
 }
 
     /*tools {
@@ -40,7 +42,8 @@ pipeline {
 		     script {
           withCredentials([usernamePassword(
             passwordVariable: 'AWS_SECRET_ACCESS_KEY',
-            usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
+            usernameVariable: 'AWS_ACCESS_KEY_ID')])
+            S3_BUCKET:'test-basava'{
 		          sh "aws s3 ls"
 			 //sh "aws s3 cp file.txt s3://bucket-name"
             
