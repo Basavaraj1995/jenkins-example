@@ -4,7 +4,7 @@ pipeline {
     AWS_ACCESS_KEY_ID = 'AKIA6AZWZ6EJZCQYXJWZ'
     AWS_SECRET_ACCESS_KEY = '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'
     AWS_REGION = 'ap-south-1'
-   
+      S3_BUCKET= 'test-basava'
 
 }
 
